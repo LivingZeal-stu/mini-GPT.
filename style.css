@@ -1,0 +1,129 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000;
+  --bot-bg: #e5e5e5;
+  --user-bg: #d1e7ff;
+}
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #eee;
+  --bot-bg: #2f2f2f;
+  --user-bg: #007bff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.top-bar {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px 20px;
+  background: var(--bot-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar button {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-wrapper {
+  width: 100%;
+  max-width: 600px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 80%;
+}
+
+.message.bot {
+  align-self: flex-start;
+}
+
+.message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.bubble {
+  padding: 12px 16px;
+  border-radius: 16px;
+  background-color: var(--bot-bg);
+  color: var(--text-color);
+  white-space: pre-wrap;
+}
+
+.message.user .bubble {
+  background-color: var(--user-bg);
+  color: #000;
+}
+
+.input-area {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 12px;
+}
+
+.input-area input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 20px;
+  outline: none;
+  background-color: #f0f0f0;
+  margin-right: 8px;
+}
+
+.input-area button {
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.typing {
+  font-style: italic;
+  opacity: 0.7;
+}
